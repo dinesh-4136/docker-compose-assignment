@@ -1,6 +1,9 @@
-FROM python:3.9-slim
+# service_2/Dockerfile
+FROM python:3.11
+
 WORKDIR /app
 COPY . .
 RUN pip install -r requirements.txt
+
+EXPOSE 8080
 CMD ["python", "app.py"]
-EXPOSE 5000
