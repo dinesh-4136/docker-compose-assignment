@@ -1,12 +1,10 @@
-FROM golang:1.20-alpine
+# service_1/Dockerfile
+FROM golang:1.20
 
 WORKDIR /app
-COPY go.mod .
 COPY . .
-<<<<<<< HEAD
-
+RUN go mod tidy
 RUN go build -o main .
 
 EXPOSE 8000
-
 CMD ["./main"]
